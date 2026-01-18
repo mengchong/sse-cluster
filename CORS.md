@@ -10,7 +10,7 @@
 
 ### 1. 后端全局 CORS 配置
 
-**文件位置：** [CorsConfig.java](file:///d:/aicode/面试准备/SSE/backend/src/main/java/com/example/sse/config/CorsConfig.java)
+**文件位置：** [CorsConfig.java]
 
 ```java
 @Configuration
@@ -30,8 +30,7 @@ public class CorsConfig implements WebMvcConfigurer {
 
 ### 2. 控制器级别 CORS 注解
 
-**文件位置：** [SseController.java](file:///d:/aicode/面试准备/SSE/backend/src/main/java/com/example/sse/controller/SseController.java)
-
+**文件位置：** [SseController.java]
 ```java
 @RestController
 @RequestMapping("/api/sse")
@@ -43,7 +42,7 @@ public class SseController {
 
 ### 3. 前端代理配置
 
-**文件位置：** [vite.config.js](file:///d:/aicode/面试准备/SSE/frontend/vite.config.js)
+**文件位置：** [vite.config.js]
 
 ```javascript
 export default defineConfig({
