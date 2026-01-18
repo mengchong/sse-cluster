@@ -1,0 +1,71 @@
+spring:
+  application:
+    name: sse-cluster-demo
+  redis:
+    host: 47.115.230.240
+    port: 6379
+    password:
+    database: 0
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+        max-wait: -1ms
+  rabbitmq:
+    host: 47.115.230.240
+    port: 5672
+    username: guest
+    password: guest
+    listener:
+      simple:
+        acknowledge-mode: manual
+        prefetch: 1
+  cloud:
+    stream:
+      bindings:
+        sseBroadcastOutput:
+          destination: sse.broadcast
+          producer:
+            required-groups: sse-group
+        sseBroadcastInput:
+          destination: sse.broadcast
+          group: sse-group
+          consumer:
+            max-attempts: 3
+      rabbit:
+        bindings:
+          sseBroadcastOutput:
+            producer:
+              exchangeType: fanout
+          sseBroadcastInput:
+            consumer:
+              exchangeType: fanout
+              auto-bind-dlq: false
+                # 如果需要死信队列，统一配置
+#              auto-bind-dlq: true
+#              dead-letter-routing-key: dlq.routing.key
+
+server:
+  port: ${SERVER_PORT:8080}
+  address: ${SERVER_ADDRESS:localhost}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+
+node:
+  id: ${NODE_ID:node-${random.uuid}}
+  health:
+    heartbeat-interval: 10s
+    timeout: 30s
+    check-interval: 5s
+logging:
+  level:
+    com.example.sse: DEBUG
+    org.springframework: INFO
+    org.springframework.web: DEBUG
+    org.springframework.security: INFO
+
