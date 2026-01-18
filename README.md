@@ -178,11 +178,10 @@ node:
 项目已配置跨域支持，允许前端从不同端口访问后端 API：
 
 **后端配置：**
-- 全局 CORS 配置：[CorsConfig.java](file:///d:/aicode/面试准备/SSE/backend/src/main/java/com/example/sse/config/CorsConfig.java)
-- 控制器注解：[SseController.java](file:///d:/aicode/面试准备/SSE/backend/src/main/java/com/example/sse/controller/SseController.java) 上的 `@CrossOrigin` 注解
+- 全局 CORS 配置：[CorsConfig.java 上的 `@CrossOrigin` 注解
 
 **前端配置：**
-- Vite 代理：[vite.config.js](file:///d:/aicode/面试准备/SSE/frontend/vite.config.js) 中的代理配置
+- Vite 代理：[vite.config.js]中的代理配置
 
 **CORS 配置详情：**
 ```java
@@ -222,3 +221,4 @@ node:
 2. 连接超时时间建议设置为 30 分钟
 3. 生产环境建议增加认证和加密
 4. 监控 Redis 和 RabbitMQ 的性能指标
+
