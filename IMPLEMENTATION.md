@@ -4,7 +4,7 @@
 
 ### 1. 客户端自动重连机制
 
-**文件位置：** [frontend/src/App.vue](file:///d:/aicode/面试准备/SSE/frontend/src/App.vue)
+**文件位置：** [frontend/src/App.vue]
 
 **核心特性：**
 - ✅ 指数退避算法（Exponential Backoff）
@@ -44,7 +44,7 @@ const calculateReconnectDelay = () => {
 
 ### 2. 节点健康监控系统
 
-**文件位置：** [backend/src/main/java/com/example/sse/health/NodeHealthMonitor.java](file:///d:/aicode/面试准备/SSE/backend/src/main/java/com/example/sse/health/NodeHealthMonitor.java)
+**文件位置：** [backend/src/main/java/com/example/sse/health/NodeHealthMonitor.java]
 
 **核心功能：**
 - ✅ 定期发送心跳（每 10 秒）
@@ -97,7 +97,7 @@ public void checkNodeHealth() {
 
 ### 3. 连接注册中心增强
 
-**文件位置：** [backend/src/main/java/com/example/sse/registry/ConnectionRegistry.java](file:///d:/aicode/面试准备/SSE/backend/src/main/java/com/example/sse/registry/ConnectionRegistry.java)
+**文件位置：** [backend/src/main/java/com/example/sse/registry/ConnectionRegistry.java]
 
 **新增功能：**
 - ✅ 集成 NodeHealthMonitor
@@ -129,7 +129,7 @@ public String getNodeId(String userId) {
 
 ### 4. 消息监听器优化
 
-**文件位置：** [backend/src/main/java/com/example/sse/stream/SseMessageListener.java](file:///d:/aicode/面试准备/SSE/backend/src/main/java/com/example/sse/stream/SseMessageListener.java)
+**文件位置：** [backend/src/main/java/com/example/sse/stream/SseMessageListener.java]
 
 **优化内容：**
 - ✅ 添加节点 ID 到日志
@@ -140,7 +140,7 @@ public String getNodeId(String userId) {
 
 ### 5. 配置文件更新
 
-**文件位置：** [backend/src/main/resources/application.yml](file:///d:/aicode/面试准备/SSE/backend/src/main/resources/application.yml)
+**文件位置：** [backend/src/main/resources/application.yml]
 
 **新增配置：**
 
